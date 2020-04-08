@@ -13,8 +13,8 @@ export default class AppHeader extends React.Component {
       <Appbar.Header>
         <Appbar.BackAction onPress={this._goBack} />
         <Appbar.Content title="Title" subtitle="Subtitle" />
-        <Appbar.Action icon="magnify" onPress={this._handleSearch} />
-        <Appbar.Action icon="dots-vertical" onPress={this._handleMore} />
+        <Appbar.Action icon="anchor" onPress={this._handleSearch} />
+        <Appbar.Action icon="more-vertical" onPress={this._handleMore} />
       </Appbar.Header>
     );
   }
