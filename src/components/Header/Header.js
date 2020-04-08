@@ -1,21 +1,30 @@
 import * as React from 'react';
 import {Appbar} from 'react-native-paper';
+import {StyleSheet} from 'react-native';
+
+const styles = StyleSheet.create({
+  base: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+});
 
 export default class AppHeader extends React.Component {
   _goBack = () => console.log('Went back');
 
-  _handleSearch = () => console.log('Searching');
-
-  _handleMore = () => console.log('Shown more');
+  _openMenu = () => console.log('Open menu');
 
   render() {
     return (
-      <Appbar.Header>
+      <Appbar style={styles.base}>
         <Appbar.BackAction onPress={this._goBack} />
-        <Appbar.Content title="Title" subtitle="Subtitle" />
-        <Appbar.Action icon="anchor" onPress={this._handleSearch} />
-        <Appbar.Action icon="more-vertical" onPress={this._handleMore} />
-      </Appbar.Header>
+        <Appbar.Action icon="menu" onPress={this._openMenu} />
+      </Appbar>
     );
   }
 }
