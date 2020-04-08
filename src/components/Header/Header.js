@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Appbar} from 'react-native-paper';
 
-export default class MyComponent extends React.Component {
+export default class AppHeader extends React.Component {
   _goBack = () => console.log('Went back');
 
   _handleSearch = () => console.log('Searching');

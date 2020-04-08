@@ -24,9 +24,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import AppHeader from './src/components/Header/Header';
+
 const App = () => {
   return (
     <>
+      <AppHeader />
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
