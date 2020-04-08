@@ -7,25 +7,12 @@
  */
 
 import React from 'react';
-// import {
-//   SafeAreaView,
-//   StyleSheet,
-//   ScrollView,
-//   View,
-//   Text,
-//   StatusBar,
-// } from 'react-native';
-
-// import {
-//   Header,
-//   LearnMoreLinks,
-//   Colors,
-// } from 'react-native/Libraries/NewAppScreen';
-
-import AppHeader from './src/components/Header/Header';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 
-const yellow = '#FFBF00';
+import AppHeader from './src/components/Header/header.component';
+import {palette} from './src/styles/colors';
+
+const {yellow} = palette;
 
 const dottyTheme = {
   ...DefaultTheme,
