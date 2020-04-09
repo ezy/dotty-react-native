@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Appbar} from 'react-native-paper';
-import {StyleSheet} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   base: {
@@ -22,6 +22,7 @@ export default class AppHeader extends React.Component {
   render() {
     return (
       <Appbar style={styles.base}>
+        <Image source={require('../../assets/images/logo.png')} />
         <Appbar.BackAction onPress={this._goBack} />
         <Appbar.Action icon="menu" onPress={this._openMenu} />
       </Appbar>

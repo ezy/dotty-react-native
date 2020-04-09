@@ -11,6 +11,7 @@ import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 
 import AppHeader from './src/components/Header/header.component';
 import {palette} from './src/styles/colors';
+import {SafeAreaView, ScrollView, View} from 'react-native';
 
 const {yellow} = palette;
 
@@ -27,7 +28,11 @@ const dottyTheme = {
 const App = () => {
   return (
     <PaperProvider theme={dottyTheme}>
-      <AppHeader />
+      <SafeAreaView>
+        <View>
+          <AppHeader />
+        </View>
+      </SafeAreaView>
     </PaperProvider>
   );
 };

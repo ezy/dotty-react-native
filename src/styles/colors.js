@@ -14,4 +14,5 @@ export const palette = {
   greyLight: '#E6E6E6',
   redDark: '#F80143',
   redLight: '#FFCBD9',
+  defaultText: '#1A1A1A',
 };
