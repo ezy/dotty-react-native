@@ -11,14 +11,16 @@ import * as React from 'react';
 
 import {SafeAreaView, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 
 import AppHeader from './src/components/Header/header.component';
 import ChoresList from './src/components/ChoresList/chores-list.component';
+import FundsManager from './src/components/FundsManager/funds-manager.component';
+
 import {palette} from './src/styles/colors';
 
-const {Navigator, Screen} = createStackNavigator();
+const {Navigator, Screen} = createDrawerNavigator();
 
 const {yellow} = palette;
 
@@ -38,9 +40,9 @@ const App = () => {
       <PaperProvider theme={dottyTheme}>
         <SafeAreaView>
           <View>
-            <AppHeader />
-            <Navigator>
+            <Navigator initialRouteName="ChoresList">
               <Screen name="ChoresList" component={ChoresList} />
+              <Screen name="FundsManager" component={FundsManager} />
             </Navigator>
           </View>
         </SafeAreaView>

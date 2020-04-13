@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {DrawerActions} from '@react-navigation/native';
 import {Appbar} from 'react-native-paper';
 import {Image, StyleSheet} from 'react-native';
 
@@ -17,21 +18,22 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class AppHeader extends React.Component {
-  _goBack = () => console.log('Went back');
+const AppHeader = (props) => {
+  // const _goBack = () => console.log('Went back');
 
-  _openMenu = () => console.log('Open menu');
+  const _openMenu = () =>
+    props.navigation.dispatch(DrawerActions.toggleDrawer());
 
-  render() {
-    return (
-      <Appbar style={styles.base}>
-        <Image
-          source={require('../../assets/images/logo.png')}
-          style={styles.logo}
-        />
-        {/* <Appbar.BackAction onPress={this._goBack} /> */}
-        <Appbar.Action icon="menu" onPress={this._openMenu} />
-      </Appbar>
-    );
-  }
-}
+  return (
+    <Appbar style={styles.base}>
+      <Image
+        source={require('../../assets/images/logo.png')}
+        style={styles.logo}
+      />
+      {/* <Appbar.BackAction onPress={_goBack} /> */}
+      <Appbar.Action icon="menu" onPress={_openMenu} />
+    </Appbar>
+  );
+};
+
+export default AppHeader;
