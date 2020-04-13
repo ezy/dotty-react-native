@@ -17,6 +17,7 @@ import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 import AppHeader from './src/components/Header/header.component';
 import ChoresList from './src/components/ChoresList/chores-list.component';
 import FundsManager from './src/components/FundsManager/funds-manager.component';
+import NavDrawer from './src/components/Drawer/drawer.component';
 
 import {palette} from './src/styles/colors';
 
@@ -40,7 +41,8 @@ const App = () => {
       <PaperProvider theme={dottyTheme}>
         <SafeAreaView>
           <View>
-            <Navigator initialRouteName="ChoresList">
+            <AppHeader />
+            <Navigator drawerContent={(props) => <NavDrawer {...props} />}>
               <Screen name="ChoresList" component={ChoresList} />
               <Screen name="FundsManager" component={FundsManager} />
             </Navigator>

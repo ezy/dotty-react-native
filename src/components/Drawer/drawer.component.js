@@ -1,26 +1,28 @@
 import * as React from 'react';
-import {Drawer} from 'react-native-paper';
+// import {Drawer} from 'react-native-paper';
+import {DrawerActions} from '@react-navigation/native';
+import {
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
 
-import {ActionButton} from '../../primitives/button.primitive';
+// import {ActionButton} from '../../primitives/button.primitive';
 
-export default class AppDrawer extends React.Component {
+const NavDrawer = (props) => {
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <DrawerItem
+        label="Close drawer"
+        onPress={() => props.navigation.dispatch(DrawerActions.closeDrawer())}
+      />
+      <DrawerItem
+        label="Toggle drawer"
+        onPress={() => props.navigation.dispatch(DrawerActions.toggleDrawer())}
+      />
+    </DrawerContentScrollView>
+  );
+};
 
-  render() {
-    const _openMenu = () =>
-      props.navigation.dispatch(DrawerActions.toggleDrawer());
-
-    return (
-      <Drawer.Section title="Some title">
-        <ActionButton icon="user" label="Profile name" mode="text" />
-        <ActionButton label="+ Add chore" mode="contained" />
-        <Drawer.Item
-          label="Second Item"
-          active={active === 'second'}
-          onPress={() => {
-            this.setState({active: 'second'});
-          }}
-        />
-      </Drawer.Section>
-    );
-  }
-}
+export default NavDrawer;
