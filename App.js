@@ -6,12 +6,19 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+
+import {SafeAreaView, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
 
 import AppHeader from './src/components/Header/header.component';
+import ChoresList from './src/components/ChoresList/chores-list.component';
 import {palette} from './src/styles/colors';
-import {SafeAreaView, ScrollView, View} from 'react-native';
+
+const {Navigator, Screen} = createStackNavigator();
 
 const {yellow} = palette;
 
@@ -27,13 +34,18 @@ const dottyTheme = {
 
 const App = () => {
   return (
-    <PaperProvider theme={dottyTheme}>
-      <SafeAreaView>
-        <View>
-          <AppHeader />
-        </View>
-      </SafeAreaView>
-    </PaperProvider>
+    <NavigationContainer>
+      <PaperProvider theme={dottyTheme}>
+        <SafeAreaView>
+          <View>
+            <AppHeader />
+            <Navigator>
+              <Screen name="ChoresList" component={ChoresList} />
+            </Navigator>
+          </View>
+        </SafeAreaView>
+      </PaperProvider>
+    </NavigationContainer>
   );
 };
 
