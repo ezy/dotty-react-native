@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  logo: {
+    marginLeft: 10,
+  },
 });
 
 export default class AppHeader extends React.Component {
@@ -22,8 +25,11 @@ export default class AppHeader extends React.Component {
   render() {
     return (
       <Appbar style={styles.base}>
-        <Image source={require('../../assets/images/logo.png')} />
-        <Appbar.BackAction onPress={this._goBack} />
+        <Image
+          source={require('../../assets/images/logo.png')}
+          style={styles.logo}
+        />
+        {/* <Appbar.BackAction onPress={this._goBack} /> */}
         <Appbar.Action icon="menu" onPress={this._openMenu} />
       </Appbar>
     );
