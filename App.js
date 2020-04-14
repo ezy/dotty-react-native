@@ -9,7 +9,6 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 
-import {SafeAreaView, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
@@ -20,8 +19,6 @@ import FundsManager from './src/components/FundsManager/funds-manager.component'
 import NavDrawer from './src/components/Drawer/drawer.component';
 
 import {palette} from './src/styles/colors';
-
-const {Navigator, Screen} = createDrawerNavigator();
 
 const {yellow} = palette;
 
@@ -35,19 +32,17 @@ const dottyTheme = {
   },
 };
 
+const {Navigator, Screen} = createDrawerNavigator();
+
 const App = () => {
   return (
     <NavigationContainer>
       <PaperProvider theme={dottyTheme}>
-        <SafeAreaView>
-          <View>
-            <AppHeader />
-            <Navigator drawerContent={(props) => <NavDrawer {...props} />}>
-              <Screen name="ChoresList" component={ChoresList} />
-              <Screen name="FundsManager" component={FundsManager} />
-            </Navigator>
-          </View>
-        </SafeAreaView>
+        <AppHeader />
+        <Navigator drawerContent={(props) => <NavDrawer {...props} />}>
+          <Screen name="ChoresList" component={ChoresList} />
+          <Screen name="FundsManager" component={FundsManager} />
+        </Navigator>
       </PaperProvider>
     </NavigationContainer>
   );
