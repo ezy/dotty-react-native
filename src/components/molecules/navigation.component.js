@@ -41,7 +41,7 @@ export const StackNavigator = () => {
           //     : scene.route.name;
 
           return (
-            <Appbar style={styles.base}>
+            <Appbar.Header style={styles.base}>
               {previous ? (
                 <Appbar.BackAction onPress={navigation.goBack} />
               ) : (
@@ -53,10 +53,10 @@ export const StackNavigator = () => {
               <Appbar.Action
                 icon="menu"
                 onPress={() => {
-                  navigation.openDrawer();
+                  navigation.toggleDrawer();
                 }}
               />
-            </Appbar>
+            </Appbar.Header>
           );
         },
       }}>
