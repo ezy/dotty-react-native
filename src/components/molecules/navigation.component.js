@@ -60,8 +60,8 @@ export const StackNavigator = () => {
           );
         },
       }}>
-      <Stack.Screen name="Chores list" component={ChoresList} />
-      <Stack.Screen name="Funds manager" component={FundsManager} />
+      <Stack.Screen name="ChoresList" component={ChoresList} />
+      <Stack.Screen name="FundsManager" component={FundsManager} />
     </Stack.Navigator>
   );
 };
