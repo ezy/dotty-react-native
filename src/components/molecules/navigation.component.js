@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Appbar, useTheme} from 'react-native-paper';
+import {Appbar} from 'react-native-paper';
 import {Image, StyleSheet} from 'react-native';
 
 import ChoresList from '../templates/chores-list.component';
