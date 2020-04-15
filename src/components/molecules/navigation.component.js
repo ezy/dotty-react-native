@@ -8,10 +8,6 @@ import FundsManager from '../templates/funds-manager.component';
 
 const styles = StyleSheet.create({
   base: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -41,7 +37,7 @@ export const StackNavigator = () => {
           //     : scene.route.name;
 
           return (
-            <Appbar.Header style={styles.base}>
+            <Appbar style={styles.base}>
               {previous ? (
                 <Appbar.BackAction onPress={navigation.goBack} />
               ) : (
@@ -56,7 +52,7 @@ export const StackNavigator = () => {
                   navigation.toggleDrawer();
                 }}
               />
-            </Appbar.Header>
+            </Appbar>
           );
         },
       }}>
