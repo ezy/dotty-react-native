@@ -38,14 +38,18 @@ export const StackNavigator = () => {
 
           return (
             <Appbar style={styles.base}>
-              {previous ? (
+              {/* {previous ? (
                 <Appbar.BackAction onPress={navigation.goBack} />
               ) : (
                 <Image
                   source={require('../../assets/images/logo.png')}
                   style={styles.logo}
                 />
-              )}
+              )} */}
+              <Image
+                source={require('../../assets/images/logo.png')}
+                style={styles.logo}
+              />
               <Appbar.Action
                 icon="menu"
                 onPress={() => {
