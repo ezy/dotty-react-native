@@ -1,11 +1,19 @@
-import * as React from 'react';
-import {View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {Headline, Searchbar} from 'react-native-paper';
 
 const ChoresList = () => {
+  const [searchQuery, setSearchQuery] = useState(true);
+
+  const _onChangeSearch = (query) => setSearchQuery(query);
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Chores List</Text>
-    </View>
+    <>
+      <Headline>All Chores</Headline>
+      <Searchbar
+        placeholder="Filter tags..."
+        onChangeText={_onChangeSearch}
+        value={searchQuery}
+      />
+    </>
   );
 };
 
